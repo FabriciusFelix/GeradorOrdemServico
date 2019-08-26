@@ -51,10 +51,12 @@ public class Program extends JFrame implements ActionListener{
              JLabel labelOcorrencia = new JLabel("Ocorrencia:"); 
              JLabel labelObs = new JLabel("Observacoes: "); 
              JLabel labelAtividade = new JLabel("Atividade: ");
+             JLabel labelCNPJ = new JLabel("CNPJ: ");
 
              JLabel labelVersao = new JLabel("Versão: 1.1");
              
              
+             labelCNPJ.setBounds(400,40,100,20);
              labelRazao.setBounds(50,40,100,20);
              labelContato.setBounds(50,80,100,20);
              labelTecnico.setBounds(50,120,100,20);
@@ -74,7 +76,7 @@ public class Program extends JFrame implements ActionListener{
              //Define as m�scaras e a caixa Atividades
              // Todas as instancia��es precisaram ficar do lado de fora do Try
              
-             MaskFormatter mascaraRazao = null;
+             MaskFormatter mascaraCNPJ = null;
              MaskFormatter mascaraContato = null;
              MaskFormatter mascaraTecnico = null;
              MaskFormatter mascaraData = null;
@@ -96,7 +98,7 @@ public class Program extends JFrame implements ActionListener{
             	 // mascaraProduto = new MaskFormatter("UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU");
                  // mascaraMarca =  new MaskFormatter("UUUUUUUUUUU");
                  //  mascaraModelo = new MaskFormatter("AAAAAAAAAAAA");
-                    mascaraRazao = new MaskFormatter(" ##.###.###/####-##");
+                    mascaraCNPJ = new MaskFormatter(" ##.###.###/####-##");
                   
                     mascaraData = new MaskFormatter(" ##/##/####");
                   
@@ -129,7 +131,7 @@ public class Program extends JFrame implements ActionListener{
                     
                    
                     mascaraAtividade.setPlaceholderCharacter('_');
-                    mascaraRazao.setPlaceholderCharacter('_');
+                    mascaraCNPJ.setPlaceholderCharacter('_');
                     mascaraSerie.setPlaceholderCharacter('_');
                     mascaraData.setPlaceholderCharacter('_');
             
@@ -141,8 +143,8 @@ public class Program extends JFrame implements ActionListener{
 
              
 //Instanciando as m�scaras nos objetos JFormattedTextField
-             JTextField jFormattedTextRazao = new JFormattedTextField(mascaraRazao);
-             JTextField JFormattedTextRazao2 = new JFormattedTextField();
+             JTextField jFormattedTextCNPJ = new JFormattedTextField(mascaraCNPJ);
+             JTextField jFormattedTextRazao = new JFormattedTextField();
              JTextField jFormattedTextContato = new JFormattedTextField(mascaraContato);
              JTextField jFormattedTextTecnico = new JFormattedTextField(mascaraTecnico);
              JTextField jFormattedTextData = new JFormattedTextField(mascaraData);
@@ -171,7 +173,7 @@ public class Program extends JFrame implements ActionListener{
              
             
              
-             JFormattedTextRazao2.setBounds(320, 40, 150, 20);
+             jFormattedTextCNPJ.setBounds(500, 40, 150, 20);
              jFormattedTextRazao.setBounds(150,40,150,20);
              jFormattedTextContato.setBounds(150,80,150,20);
              jFormattedTextTecnico.setBounds(150,120,150,20);
@@ -228,7 +230,7 @@ public class Program extends JFrame implements ActionListener{
                      janela.add(jFormattedOcorrencia);
                      janela.add(jFormattedSerie);
                      janela.add(ativ);
-                     janela.add(JFormattedTextRazao2);
+                     janela.add(jFormattedTextCNPJ);
                      //bot�o
                      janela.add(botao);
                      janela.add(labelVersao);
@@ -245,7 +247,7 @@ public class Program extends JFrame implements ActionListener{
                      janela.add(labelOcorrencia);
                      janela.add(labelObs);
                      janela.add(labelAtividade);
-                     
+                     janela.add(labelCNPJ);
              
                      setSize(800, 500);
                      setTitle("Gerador de Ordem de Servico");
